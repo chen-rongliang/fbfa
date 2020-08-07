@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lvbu {
+            width: 213px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="demo"></div>
+        <div class="opera">
+            <button class="btn btn-play">播放</button>
+            <button class="btn btn-pause">暂停</button>
+            <button class="btn btn-stop">停止</button>
+        </div>
+    </div>
+	<script src="./fbfa.js"></script>
+    <script>
+        ;(function (doc) {
+            // 实例化
+			let demo = new FBFA({
+				name: 'demo',
+				url: 'http://talksamguk.eyougame.com/static/img/cartoon/lvbu.png',
+				target: '.demo',
+				width: 307,
+				height: 256,
+				orientation: 1,
+				count: 30
+            })
+            // 操作
+            document.querySelector('.btn-play').addEventListener('click', () => {
+                demo.play()
+            }, false)
+            
+            document.querySelector('.btn-pause').addEventListener('click', () => {
+                demo.pause()
+            }, false)
+            
+            document.querySelector('.btn-stop').addEventListener('click', () => {
+                demo.stop()
+            }, false)
+        })(document)
+    </script>
+</body>
+</html>
